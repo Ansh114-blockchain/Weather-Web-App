@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherScope | Modern Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="weather-app">
-    <h1>Weather App</h1>
-    <input type="text" id="city" placeholder="Enter city name">
-    <button id="search">Search</button>
-    <div id="weather-result">
-      <h2 id="city-name"></h2>
-      <p id="temperature"></p>
-      <p id="description"></p>
+    <div class="weather-app">
+        <header class="app-header">
+            <h1 class="app-title">WeatherScope</h1>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for a city..." aria-label="City search">
+            <button class="search-btn">Search</button>
+        </div>
+        
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+        
+        <div class="error-state">
+            <div class="error-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <h3>Location Not Found</h3>
+            <p>Please check the city name and try again.</p>
+        </div>
+        
+        <main class="weather-display">
+            <div class="weather-icon"><i class="fas fa-sun"></i></div>
+            <div class="temperature">--°C</div>
+            <h2 class="city-name">Search for a city</h2>
+            <p class="weather-description">Weather information will appear here</p>
+            
+            <div class="weather-details">
+                <div class="detail-card">
+                    <div class="detail-icon"><i class="fas fa-tint"></i></div>
+                    <div class="detail-value">--%</div>
+                    <p class="detail-label">Humidity</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon"><i class="fas fa-wind"></i></div>
+                    <div class="detail-value">-- km/h</div>
+                    <p class="detail-label">Wind Speed</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="detail-value">-- hPa</div>
+                    <p class="detail-label">Pressure</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon"><i class="fas fa-eye"></i></div>
+                    <div class="detail-value">-- km</div>
+                    <p class="detail-label">Visibility</p>
+                </div>
+            </div>
+        </main>
     </div>
-  </div>
-  <script src="app.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
